@@ -6,6 +6,7 @@ import LikeNumber from "./LikeNumber.vue";
 
 Vue.config.productionTip = false;
 // グローバル登録
+// main.jsでimportして来て、Vue.componentを宣言する
 Vue.component('LikeNumber', LikeNumber);
 
 new Vue({

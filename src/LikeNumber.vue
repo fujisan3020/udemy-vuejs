@@ -1,5 +1,5 @@
 <template>
-  template内はルート要素を必ず1つだけにしなければならない
+  <!-- template内はルート要素を必ず1つだけにしなければならない -->
   <div class="">
     <p>いいね({{ number }})</p>
     <button @click="increment">+1</button>
