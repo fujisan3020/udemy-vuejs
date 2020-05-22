@@ -1,9 +1,12 @@
+<!-- App.vueは、大きくtemplateタグ・scriptタグ・styleタグに3つに分かれている(単一ファイルコンポーネント) -->
+
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
+
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
@@ -15,6 +18,7 @@ export default {
   }
 }
 </script>
+
 
 <style>
 #app {
