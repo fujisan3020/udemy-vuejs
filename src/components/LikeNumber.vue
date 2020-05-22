@@ -1,6 +1,6 @@
 <template>
   <!-- template内はルート要素を必ず1つだけにしなければならない -->
-  <div class="">
+  <div>
     <p>いいね({{ number }})</p>
     <button @click="increment">+1</button>
   </div>
@@ -21,3 +21,10 @@
     }
   };
 </script>
+
+<!-- scoped : 今いるコンポーネントに属性を付与して、CSSを反映させる(CSSのスコープ) -->
+<style scoped>
+div {
+  border: 1px solid red;
+}
+</style>
