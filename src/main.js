@@ -2,7 +2,7 @@ import Vue from 'vue'
 
 // App.vueファイルをインポートすることによって、単一ファイルコンポーネントがオブジェクトになって使用できる？
 import App from './App.vue';
-import LikeNumber from "./LikeNumber.vue";
+import LikeNumber from "./components/LikeNumber.vue";
 
 Vue.config.productionTip = false;
 // グローバル登録

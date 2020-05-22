@@ -2,6 +2,10 @@
 
 <template>
   <div>
+    <!-- ケバブケース -->
+    <!-- <like-header></like-header> -->
+
+    <!-- コンポーネントの名前は、自動補完されやすく、html要素と見分けが付き易いので、パスカルがおすすめ -->
     <LikeHeader></LikeHeader>
     <LikeNumber></LikeNumber>
   </div>
@@ -9,11 +13,11 @@
 
 <script>
 // ローカル登録
-import LikeHeader from "./LikeHeader.vue";
+import LikeHeader from "./components/LikeHeader.vue";
 
   export default {
     components: {
       LikeHeader
     }
-  }
+  };
 </script>
