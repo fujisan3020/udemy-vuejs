@@ -18,7 +18,7 @@
         // required: true,
 
         // default : 親コンポーネントでpropsの属性が設定されていたら10、されていなかったら親コンポーネントに従う
-        default: 10
+        default: 10,
       }
     },
     // propsはdataの扱いと同じで良い
