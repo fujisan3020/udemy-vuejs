@@ -27,6 +27,7 @@ import LikeHeader from "./components/LikeHeader.vue";
     methods: {
       incrementNumber(value) {
         this.number = value;
+        
       }
     }
   };
