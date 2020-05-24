@@ -2,12 +2,11 @@
 
 <template>
   <div>
-    <!-- ケバブケース -->
-    <!-- <like-header></like-header> -->
-
-    <!-- コンポーネントの名前は、自動補完されやすく、html要素と見分けが付き易いので、パスカルがおすすめ -->
     <LikeHeader></LikeHeader>
-    <LikeNumber></LikeNumber>
+    <h2>{{ number  }}</h2>
+    <!-- 子のコンポーネントのpropsで宣言されものを属性として設する -->
+    <LikeNumber :number="number"></LikeNumber>
+    <LikeNumber :number="number"></LikeNumber>
   </div>
 </template>
 
@@ -16,6 +15,11 @@
 import LikeHeader from "./components/LikeHeader.vue";
 
   export default {
+    data() {
+      return {
+        number: 14,
+      }
+    },
     components: {
       LikeHeader
     }
