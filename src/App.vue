@@ -6,7 +6,7 @@
     <h2>{{ number }}</h2>
     <!-- 子のコンポーネントのpropsで宣言されものを属性として設する -->
     <!-- また、HTML内では、ケバブケースで書く -->
-    <LikeNumber :total-number="number"></LikeNumber>
+    <LikeNumber :total-number="number" @my-click="incrementNumber"></LikeNumber>
     <LikeNumber :total-number="number"></LikeNumber>
   </div>
 </template>
@@ -23,6 +23,11 @@ import LikeHeader from "./components/LikeHeader.vue";
     },
     components: {
       LikeHeader
+    },
+    methods: {
+      incrementNumber(value) {
+        this.number = value;
+      }
     }
   };
 </script>

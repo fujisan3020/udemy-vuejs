@@ -26,7 +26,7 @@
     //   }
     // },
 
-    props: ["totalNumber", "testProps"],
+    props: ["totalNumber"],
     // propsはdataの扱いと同じで良い(ex. this.〜)
     computed: {
       halfNumber() {
@@ -35,7 +35,9 @@
     },
     methods: {
       increment() {
-        this.number += 1;
+        // $emit :子から親コンポーネントにデータを渡すメソッド
+               // 親コンポーネントのイベントを発火させるスイッチ(カスタムイベントの作成)
+        this.$emit("my-click", this.totalNumber + 1);
       }
     }
   };
