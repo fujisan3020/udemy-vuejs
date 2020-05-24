@@ -3,10 +3,11 @@
 <template>
   <div>
     <LikeHeader></LikeHeader>
-    <h2>{{ number  }}</h2>
+    <h2>{{ number }}</h2>
     <!-- 子のコンポーネントのpropsで宣言されものを属性として設する -->
-    <LikeNumber :number="number"></LikeNumber>
-    <LikeNumber :number="number"></LikeNumber>
+    <!-- また、HTML内では、ケバブケースで書く -->
+    <LikeNumber :totalNumber="number"></LikeNumber>
+    <LikeNumber :total-number="number"></LikeNumber>
   </div>
 </template>
 
