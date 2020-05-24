@@ -6,7 +6,7 @@
     <h2>{{ number }}</h2>
     <!-- 子のコンポーネントのpropsで宣言されものを属性として設する -->
     <!-- また、HTML内では、ケバブケースで書く -->
-    <LikeNumber></LikeNumber>
+    <LikeNumber :total-number="number"></LikeNumber>
     <LikeNumber :total-number="number"></LikeNumber>
   </div>
 </template>

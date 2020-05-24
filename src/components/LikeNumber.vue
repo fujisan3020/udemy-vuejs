@@ -11,17 +11,23 @@
   export default {
     // props : 親から子にデータを渡す命令(※プロパティ)
     // JavaScriptではキャメルケースで書く
-    props: {
-      // propsはオブジェクトにすることでデータ型等が指定できる
-      totalNumber: {
-        type: Number,
-        // required: true,
+    // props: {
+    //
+    //   // propsはオブジェクトにすることでデータ型等が指定できる
+    //   totalNumber: {
+    //     type: Number,
+    //     // required: true,
+    //
+    //     // default : 親コンポーネントでpropsの属性が設定されていたら10、されていなかったら親コンポーネントに従う
+    //     default: 10,
+    //   },
+    //   testProps: {
+    //     type: String
+    //   }
+    // },
 
-        // default : 親コンポーネントでpropsの属性が設定されていたら10、されていなかったら親コンポーネントに従う
-        default: 10,
-      }
-    },
-    // propsはdataの扱いと同じで良い
+    props: ["totalNumber", "testProps"],
+    // propsはdataの扱いと同じで良い(ex. this.〜)
     computed: {
       halfNumber() {
         return this.totalNumber / 2;
