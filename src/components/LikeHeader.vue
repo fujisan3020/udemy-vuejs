@@ -1,9 +1,13 @@
 <template>
   <div>
     <!-- slot : 親コンポーネントから子コンポーネントにHTMLタグを含んだデータを渡すことができる -->
-    <slot>
-      <h2>デフォルトのタイトル</h2>
-    </slot>
+    <slot name="title"></slot>
+    <hr>
+    <p>いいねの数</p>
+    
+    <!-- 名前付きスロット -->
+    <!-- v-slotで設定された値をname=""で指定する -->
+    <slot name="number"></slot>
   </div>
 </template>
 
