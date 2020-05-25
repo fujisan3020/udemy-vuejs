@@ -2,10 +2,8 @@
 
 <template>
   <div>
-    <LikeHeader headerText="hello">
-      <h1>トータルのいいね数</h1>
-      <h2>{{ number }}</h2>
-    </LikeHeader>
+    <!-- slotの中身がない時に、フォールバックコンテンツ(中身がない時のデフォルト設定)を設定できる -->
+    <LikeHeader></LikeHeader>
     <!-- 子のコンポーネントのpropsで宣言されものを属性として設する -->
     <!-- また、HTML内では、ケバブケースで書く -->
     <LikeNumber :total-number="number" @my-click="incrementNumber"></LikeNumber>

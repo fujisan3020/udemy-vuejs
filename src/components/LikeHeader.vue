@@ -1,8 +1,9 @@
 <template>
   <div>
     <!-- slot : 親コンポーネントから子コンポーネントにHTMLタグを含んだデータを渡すことができる -->
-    <slot></slot>
-    <p>{{ headerText }}</p>
+    <slot>
+      <h2>デフォルトのタイトル</h2>
+    </slot>
   </div>
 </template>
 
