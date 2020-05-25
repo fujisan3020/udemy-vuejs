@@ -2,8 +2,10 @@
 
 <template>
   <div>
-    <LikeHeader></LikeHeader>
-    <h2>{{ number }}</h2>
+    <LikeHeader>
+      <h1>トータルのいいね数</h1>
+      <h2>{{ number }}</h2>
+    </LikeHeader>
     <!-- 子のコンポーネントのpropsで宣言されものを属性として設する -->
     <!-- また、HTML内では、ケバブケースで書く -->
     <LikeNumber :total-number="number" @my-click="incrementNumber"></LikeNumber>
@@ -27,7 +29,7 @@ import LikeHeader from "./components/LikeHeader.vue";
     methods: {
       incrementNumber(value) {
         this.number = value;
-        
+
       }
     }
   };
