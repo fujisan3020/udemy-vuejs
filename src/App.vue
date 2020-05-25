@@ -2,7 +2,7 @@
 
 <template>
   <div>
-    <LikeHeader>
+    <LikeHeader headerText="hello">
       <h1>トータルのいいね数</h1>
       <h2>{{ number }}</h2>
     </LikeHeader>
@@ -39,4 +39,7 @@ import LikeHeader from "./components/LikeHeader.vue";
   div {
     border: 1px solid blue;
   }
+  /* h1 {
+    color: red;
+  } */
 </style>

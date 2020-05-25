@@ -2,6 +2,7 @@
   <div>
     <!-- slot : 親コンポーネントから子コンポーネントにHTMLタグを含んだデータを渡すことができる -->
     <slot></slot>
+    <p>{{ headerText }}</p>
   </div>
 </template>
 
@@ -10,3 +11,10 @@ export default {
   props: ["headerText"]
 };
 </script>
+
+<!-- slotは、cssでは親コンポーネント・子コンポーネントどちらでもで反映される。ちなみに、両方反映させていた場合、親コンポーネントの設定が優先される。 -->
+<style media="screen">
+  h1 {
+    color: red;
+  }
+</style>
