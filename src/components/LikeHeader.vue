@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- slot : 親コンポーネントから子コンポーネントにHTMLタグを含んだデータを渡すことができる -->
-    
-    <slot name="title" :user="user" text="text"></slot>
+
+    <slot :user="user" text="text"></slot>
     <!-- デフォルトのスロットはname="default"となっており、親コンポーネントでtemplateが設定されていないタグなどは、1つに接合され、表される。 -->
     <slot></slot>
     <hr>
@@ -10,7 +10,7 @@
 
     <!-- 名前付きスロット -->
     <!-- v-slotで設定された値をname=""で指定する -->
-    <slot name="number"></slot>
+    <slot></slot>
   </div>
 </template>
 

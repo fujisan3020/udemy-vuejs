@@ -2,21 +2,16 @@
 
 <template>
   <div>
-    <LikeHeader>
-      <h2>みなさん</h2>
+    <!-- slotPropsが設定されており、かつ、他に名前付きスロットが無い時、コンポーネントにもv-slotをつけることができる。 -->
+    <LikeHeader v-slot="slotProps">
+        <p>{{ slotProps }}</p>
+        <h2>みなさん</h2>
+        <h3>はじめまして</h3>
+        <p>よろしくお願いします</p>
+
       <!-- 名前付きスロット : templateタグに、v-slotとその第一引数を指定し、子コンポーネントのslotにnameでその第一引数を指定することで、複数のスロットを使用することができる。 -->
       <!-- slotProps : スロットプロパティは子コンポーネントから親コンポーネントにデータを送ることができる -->
-      <template v-slot:title="slotProps">
-        <h2>こんにちは</h2>
-        <h2>{{ slotProps.user.firstName }}</h2>
-      </template>
 
-      <h3>はじめまして</h3>
-      <p>よろしくお願いします</p>
-
-      <template v-slot:number>
-        <p>{{ number }}</p>
-      </template>
     </LikeHeader>
     <!-- 子のコンポーネントのpropsで宣言されものを属性として設する -->
     <!-- また、HTML内では、ケバブケースで書く -->
