@@ -2,14 +2,17 @@
 
 <template>
   <div>
-    <LikeHeader>
+    <LikeHeader #default="slotProps">
         <p>{{ slotProps }}</p>
         <h2>みなさん</h2>
         <h3>はじめまして</h3>
         <p>よろしくお願いします</p>
 
+        <!-- v-slot: は # に置き換えることができる -->
+
         <!-- 動的なスロット -->
-        <template v-slot:[title]></template>
+        <!-- <template v-slot:[title]></template> -->
+        <!-- <template #[title]></template> -->
     </LikeHeader>
 
 
