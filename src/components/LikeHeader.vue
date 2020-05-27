@@ -1,7 +1,8 @@
 <template>
   <div>
     <!-- slot : 親コンポーネントから子コンポーネントにHTMLタグを含んだデータを渡すことができる -->
-    <slot name="title"></slot>
+    
+    <slot name="title" :user="user" text="text"></slot>
     <!-- デフォルトのスロットはname="default"となっており、親コンポーネントでtemplateが設定されていないタグなどは、1つに接合され、表される。 -->
     <slot></slot>
     <hr>
@@ -15,7 +16,14 @@
 
 <script>
 export default {
-  props: ["headerText"]
+  data() {
+    return {
+      user: {
+        firstName: "Jack",
+        lastName: "Donald"
+      }
+    }
+  }
 };
 </script>
 
