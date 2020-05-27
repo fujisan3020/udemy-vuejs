@@ -2,19 +2,18 @@
 
 <template>
   <div>
-    <!-- slotPropsが設定されており、かつ、他に名前付きスロットが無い時、コンポーネントにもv-slotをつけることができる。 -->
-    <LikeHeader v-slot="slotProps">
+    <LikeHeader>
         <p>{{ slotProps }}</p>
         <h2>みなさん</h2>
         <h3>はじめまして</h3>
         <p>よろしくお願いします</p>
 
-      <!-- 名前付きスロット : templateタグに、v-slotとその第一引数を指定し、子コンポーネントのslotにnameでその第一引数を指定することで、複数のスロットを使用することができる。 -->
-      <!-- slotProps : スロットプロパティは子コンポーネントから親コンポーネントにデータを送ることができる -->
-
+        <!-- 動的なスロット -->
+        <template v-slot:[title]></template>
     </LikeHeader>
-    <!-- 子のコンポーネントのpropsで宣言されものを属性として設する -->
-    <!-- また、HTML内では、ケバブケースで書く -->
+
+
+
     <LikeNumber :total-number="number" @my-click="incrementNumber"></LikeNumber>
     <LikeNumber :total-number="number"></LikeNumber>
   </div>
@@ -28,6 +27,7 @@ import LikeHeader from "./components/LikeHeader.vue";
     data() {
       return {
         number: 14,
+        title: "title"
       }
     },
     components: {
