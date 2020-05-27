@@ -11,7 +11,10 @@
     <button @click="currentComponent = 'Home' ">Home</button>
     <button @click="currentComponent = 'About' ">About</button>
     <!-- 動的コンポーネント : componentタグとis属性を使用して作成する -->
-    <component :is="currentComponent"></component>
+    <!-- keep-aliveタグ : keep-aliveタグでコンポーネントタグを囲うことによって、動的コンポーネントの状態を保持する -->
+    <keep-alive>
+      <component :is="currentComponent"></component>
+    </keep-alive>
   </div>
 </template>
 
