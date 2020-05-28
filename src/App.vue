@@ -86,6 +86,23 @@ p<!-- App.vueは、大きくtemplateタグ・scriptタグ・styleタグに3つ�
         >
         <label for="30">30代</label>
         <p>{{ eventData.target }}</p>
+
+        <p>参加費</p>
+        <input
+          id="free"
+          type="radio"
+          value="無料"
+          v-model="eventData.price"
+        >
+        <label for="free">無料</label>
+
+        <input
+          id="paid"
+          type="radio"
+          value="有料"
+          v-model="eventData.price"
+        >
+        <label for="paid">有料</label>
     </div>
   </div>
 </template>
@@ -109,7 +126,8 @@ import Home from "./components/Home.vue";
           // 単体のチェックボックスをv-modelにする時は、中身はboolean型で設定する
           isPrivate: false,
           // 複数のチェックボックスにv-modelを設定する時は、中身は配列で設定する
-          target: []
+          target: [],
+          price: "無料"
         }
       };
     },
