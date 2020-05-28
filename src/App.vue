@@ -18,13 +18,11 @@ p<!-- App.vueは、大きくtemplateタグ・scriptタグ・styleタグに3つ�
     <div style="padding: 3rem;">
       <!-- lazy修飾子 : 入力してフォーカスを外した時に発火させる -->
       <h2>イベントのフォーム</h2>
-      <label for="title">タイトル</label>
-      <input
-        id="title"
-        type="text"
-        v-model.lazy="eventData.title"
-      >
-      <pre>{{ eventData.title }}</pre>
+      <EventTitle v-model="eventData.title"></EventTitle>
+      <!-- <EventTitle
+        :value="eventData.title"
+        @input="eventData.title = $event"
+      ></EventTitle> -->
 
       <!-- number修飾子 : HTMLのinputは、最初にデータ型を数値型にしていても、それ以降は文字列型になってしまう。そこで、number修飾子を使うことによって、数値型を保持することができる。 -->
       <label for="maxNumber">最大人数</label>
@@ -124,6 +122,7 @@ p<!-- App.vueは、大きくtemplateタグ・scriptタグ・styleタグに3つ�
 import LikeHeader from "./components/LikeHeader.vue";
 import About from "./components/About.vue";
 import Home from "./components/Home.vue";
+import EventTitle from "./components/EventTitle.vue";
 
   export default {
     data() {
@@ -148,7 +147,8 @@ import Home from "./components/Home.vue";
     components: {
       LikeHeader,
       About,
-      Home
+      Home,
+      EventTitle
     },
     methods: {
       incrementNumber(value) {
