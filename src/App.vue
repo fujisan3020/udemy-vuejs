@@ -60,6 +60,32 @@ p<!-- App.vueは、大きくtemplateタグ・scriptタグ・styleタグに3つ�
         >
         <label for="isPrivate">非公開</label>
         <p>{{ eventData.isPrivate }}</p>
+
+        <p>参加条件</p>
+        <input
+          id="10"
+          type="checkbox"
+          value="10代"
+          v-model="eventData.target"
+        >
+        <label for="10">10代</label>
+
+        <input
+          id="20"
+          type="checkbox"
+          value="20代"
+          v-model="eventData.target"
+        >
+        <label for="20">20代</label>
+
+        <input
+          id="30"
+          type="checkbox"
+          value="30代"
+          v-model="eventData.target"
+        >
+        <label for="30">30代</label>
+        <p>{{ eventData.target }}</p>
     </div>
   </div>
 </template>
@@ -81,7 +107,9 @@ import Home from "./components/Home.vue";
           host: "",
           detail: "",
           // 単体のチェックボックスをv-modelにする時は、中身はboolean型で設定する
-          isPrivate: false
+          isPrivate: false,
+          // 複数のチェックボックスにv-modelを設定する時は、中身は配列で設定する
+          target: []
         }
       };
     },
