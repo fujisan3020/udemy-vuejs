@@ -1,4 +1,4 @@
-<!-- App.vueは、大きくtemplateタグ・scriptタグ・styleタグに3つに分かれている(単一ファイルコンポーネント) -->
+p<!-- App.vueは、大きくtemplateタグ・scriptタグ・styleタグに3つに分かれている(単一ファイルコンポーネント) -->
 
 <template>
   <div>
@@ -33,7 +33,7 @@
         type="number"
         v-model.number="eventData.maxNumber"
       >
-      <p>{{ typeof eventData.maxNumber }}</p>
+      <p>{{ eventData.maxNumber }}</p>
 
       <!-- trim修飾子 : 先頭と末尾の空白を取り除く -->
       <label for="host">主催者</label>
@@ -44,6 +44,14 @@
       >
       <pre>{{ eventData.host }}</pre>
 
+      <label for="detail">イベントの内容</label>
+      <textarea
+        id="detail"
+        cols="30"
+        rows="10"
+        v-model="eventData.detail"
+        ></textarea>
+        <p style="white-space: pre">{{ eventData.detail }}</p>
     </div>
   </div>
 </template>
@@ -60,9 +68,10 @@ import Home from "./components/Home.vue";
         number: 14,
         currentComponent: "Home",
         eventData: {
-          title: "タイトル",
+          title: "",
           maxNumber: 0,
-          host: ""
+          host: "",
+          detail: ""
         }
       };
     },
