@@ -15,7 +15,7 @@ p<!-- App.vueは、大きくtemplateタグ・scriptタグ・styleタグに3つ�
     <keep-alive>
       <component :is="currentComponent"></component>
     </keep-alive>
-    <div>
+    <div style="padding: 3rem;">
       <!-- lazy修飾子 : 入力してフォーカスを外した時に発火させる -->
       <h2>イベントのフォーム</h2>
       <label for="title">タイトル</label>
@@ -103,6 +103,18 @@ p<!-- App.vueは、大きくtemplateタグ・scriptタグ・styleタグに3つ�
           v-model="eventData.price"
         >
         <label for="paid">有料</label>
+
+        <p>開催場所</p>
+        <select
+          v-model="eventData.location"
+          multiple
+        >
+          <option
+            v-for="location in locations"
+            :key="location"
+          >{{ location }}</option>
+        </select>
+        <p>{{ eventData.location }}</p>
     </div>
   </div>
 </template>
@@ -118,6 +130,7 @@ import Home from "./components/Home.vue";
       return {
         number: 14,
         currentComponent: "Home",
+        locations: ["東京","大阪","名古屋"],
         eventData: {
           title: "",
           maxNumber: 0,
@@ -127,7 +140,8 @@ import Home from "./components/Home.vue";
           isPrivate: false,
           // 複数のチェックボックスにv-modelを設定する時は、中身は配列で設定する
           target: [],
-          price: "無料"
+          price: "無料",
+          location: "東京"
         }
       };
     },
