@@ -43,10 +43,3 @@
     }
   };
 </script>
-
-<!-- scoped : 今いるコンポーネントに属性を付与して、CSSを反映させる(CSSのスコープ) -->
-<style scoped>
-div {
-  border: 1px solid red;
-}
-</style>
