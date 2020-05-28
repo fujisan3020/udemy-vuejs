@@ -52,6 +52,14 @@ p<!-- App.vueは、大きくtemplateタグ・scriptタグ・styleタグに3つ�
         v-model="eventData.detail"
         ></textarea>
         <p style="white-space: pre">{{ eventData.detail }}</p>
+
+        <input
+          id="isPrivate"
+          type="checkbox"
+          v-model="eventData.isPrivate"
+        >
+        <label for="isPrivate">非公開</label>
+        <p>{{ eventData.isPrivate }}</p>
     </div>
   </div>
 </template>
@@ -71,7 +79,9 @@ import Home from "./components/Home.vue";
           title: "",
           maxNumber: 0,
           host: "",
-          detail: ""
+          detail: "",
+          // 単体のチェックボックスをv-modelにする時は、中身はboolean型で設定する
+          isPrivate: false
         }
       };
     },
