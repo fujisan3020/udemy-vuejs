@@ -24,8 +24,17 @@
         type="text"
         v-model.lazy="eventData.title"
       >
+      <p>{{ eventData.title }}</p>
+
+      <!-- number修飾子 : HTMLのinputは、最初にデータ型を数値型にしていても、それ以降は文字列型になってしまう。そこで、number修飾子を使うことによって、数値型を保持することができる。 -->
+      <label for="maxNumber">最大人数</label>
+      <input
+        id="maxNumber"
+        type="number"
+        v-model.number="eventData.maxNumber"
+      >
+      <p>{{ typeof eventData.maxNumber }}</p>
     </div>
-    <p>{{ eventData.title }}</p>
   </div>
 </template>
 
@@ -41,7 +50,8 @@ import Home from "./components/Home.vue";
         number: 14,
         currentComponent: "Home",
         eventData: {
-          title: "タイトル"
+          title: "タイトル",
+          maxNumber: 0
         }
       };
     },
