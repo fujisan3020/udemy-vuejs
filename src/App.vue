@@ -16,9 +16,14 @@
       <component :is="currentComponent"></component>
     </keep-alive>
     <div>
+      <!-- lazy修飾子 : 入力してフォーカスを外した時に発火させる -->
       <h2>イベントのフォーム</h2>
       <label for="title">タイトル</label>
-      <input id="title" type="text" v-model="eventData.title">
+      <input
+        id="title"
+        type="text"
+        v-model.lazy="eventData.title"
+      >
     </div>
     <p>{{ eventData.title }}</p>
   </div>
