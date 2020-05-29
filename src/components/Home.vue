@@ -23,6 +23,7 @@ export default {
     lowerCase(value) {
       return value.toLowerCase();
     }
+    // filtersでもthisは使えない
   },
   // directivesオプションを使えば、カスタムディレクティブをローカル登録できる
   // カスタムディレクティフではthisは使えない
