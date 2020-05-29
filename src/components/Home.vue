@@ -5,10 +5,9 @@
     <p v-border:solid.round.shadow=" {width: '5px', color: 'red'} ">Home</p>
     <!-- filterを使う場合は、パイプ | を使って、
       {{ データ | filter名 }} というような感じで使用する  -->
-    <h2>{{ title | upperCase }}</h2>
+    <h2>{{ title | lowerCase }}</h2>
     <p>{{ subTitle | upperCase }}</p>
   </div>
-  <!-- データを2つ以上渡す時は、オブジェクトにして渡す -->
 </template>
 
 <script>
@@ -18,6 +17,11 @@ export default {
       title: "Welcome to Tokyo",
       subTitle: "Tokyo is central city"
     };
+  },
+  filters: {
+    lowerCase(value) {
+      return value.lowerCase();
+    }
   },
   // directivesオプションを使えば、カスタムディレクティブをローカル登録できる
   // カスタムディレクティフではthisは使えない
