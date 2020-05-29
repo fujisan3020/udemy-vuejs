@@ -10,8 +10,10 @@ Vue.config.productionTip = false;
 
 Vue.component('LikeNumber', LikeNumber);
 // カスタムディレクティブは抽象化したコードを再利用したいときに使う
-Vue.directive("border", function(el,) {
+Vue.directive("border", function(el,binding) {
   el.style.border = "solid black 2px";
+  // binding.valueでデータを受け取ることができる
+  el.style.borderWidth = binding.value;
 });
 
 new Vue({
