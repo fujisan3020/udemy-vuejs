@@ -16,6 +16,9 @@
 import { tokyoNumber } from "@/tokyoNumber";
 
 export default {
-mixins: [tokyoNumber]
+mixins: [tokyoNumber],
+created() {
+  console.log("created in component");
+}
 };
 </script>

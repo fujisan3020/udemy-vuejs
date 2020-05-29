@@ -10,5 +10,9 @@ export const tokyoNumber = {
     lowerCase(value) {
       return value.toLowerCase();
     }
+  },
+  //  ミックスインとコンポーネントが被った場合、コンポーネントが優先される。しかし、ライフサイクルフックにおいては、先にミックスインが起こり、あとでコンポーネントが起こる。
+  created() {
+    console.log("created in Mixin");
   }
 };
