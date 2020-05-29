@@ -17,6 +17,14 @@ Vue.filter("upperCase", function(value) {
   return value.toUpperCase();
 });
 
+// グローバルミックスイン
+// 全てのVueインスタンスにオプションが反映されてしまうので、注意!! 基本的には使わない
+Vue.mixin({
+  created() {
+    console.log("global mixin");
+  }
+})
+
 new Vue({
   // E6のrender関数の記載方法
   render: h => h(App),
