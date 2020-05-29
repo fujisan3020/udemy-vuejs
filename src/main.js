@@ -10,6 +10,13 @@ Vue.config.productionTip = false;
 
 Vue.component('LikeNumber', LikeNumber);
 
+// filter : 一般的なテキストフォーマットを作成する
+// 第一引数はfilter名、第二引数は関数(今回は)を入れる。
+// 関数には必ず引数を取る必要がある。
+Vue.filter("upperCase", function(value) {
+  return value.toUpperCase();
+});
+
 new Vue({
   // E6のrender関数の記載方法
   render: h => h(App),
