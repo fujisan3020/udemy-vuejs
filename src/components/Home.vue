@@ -19,6 +19,8 @@ export default {
       subTitle: "Tokyo is central city"
     };
   },
+  // computed と filter の違い
+  // computedは差分だけ変わるが、filterはそうでは無く、１から作成されて再描画される
   filters: {
     lowerCase(value) {
       return value.toLowerCase();
