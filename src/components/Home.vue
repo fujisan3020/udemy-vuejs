@@ -20,7 +20,7 @@ export default {
   },
   filters: {
     lowerCase(value) {
-      return value.lowerCase();
+      return value.toLowerCase();
     }
   },
   // directivesオプションを使えば、カスタムディレクティブをローカル登録できる
