@@ -8,24 +8,25 @@
     <!-- filterは複数連結させることができ、左から順番に処理が実行されていく -->
     <h2>{{ title | lowerCase | upperCase }}</h2>
     <p>{{ subTitle | upperCase }}</p>
+    <p>{{ number }}</p>
+    <button @click="number++">+1</button>
+    <CountNumber></CountNumber>
   </div>
 </template>
 
 <script>
+import CountNumber from "./CountNumber.vue";
+import { tokyoNumber } from "@/tokyoNumber";
+
 export default {
+  mixins: [tokyoNumber],
   data() {
     return {
-      title: "Welcome to Tokyo",
-      subTitle: "Tokyo is central city"
+      tmpData: "hello"
     };
   },
-  // computed と filter の違い
-  // computedは差分だけ変わるが、filterはそうでは無く、１から作成されて再描画される
-  filters: {
-    lowerCase(value) {
-      return value.toLowerCase();
-    }
-    // filtersでもthisは使えない
+  components: {
+    CountNumber
   },
   // directivesオプションを使えば、カスタムディレクティブをローカル登録できる
   // カスタムディレクティフではthisは使えない
