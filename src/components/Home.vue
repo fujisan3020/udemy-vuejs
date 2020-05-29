@@ -5,7 +5,8 @@
     <p v-border:solid.round.shadow=" {width: '5px', color: 'red'} ">Home</p>
     <!-- filterを使う場合は、パイプ | を使って、
       {{ データ | filter名 }} というような感じで使用する  -->
-    <h2>{{ title | lowerCase }}</h2>
+    <!-- filterは複数連結させることができ、左から順番に処理が実行されていく -->
+    <h2>{{ title | lowerCase | upperCase }}</h2>
     <p>{{ subTitle | upperCase }}</p>
   </div>
 </template>
