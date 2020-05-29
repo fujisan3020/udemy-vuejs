@@ -8,6 +8,7 @@
 <script>
 export default {
   // directivesオプションを使えば、カスタムディレクティブをローカル登録できる
+  // カスタムディレクティフではthisは使えない
   directives: {
     border(el, binding) {
       // binding.valueでデータを受け取ることができる
