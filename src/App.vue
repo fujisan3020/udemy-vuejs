@@ -2,7 +2,10 @@
   <div class="main">
     <button @click="show = !show">切り替え</button>
     <!-- transitionコンポーネント -->
-    <transition name="fade">
+    <transition
+      enter-active-class="animated bounce"
+      leave-active-class="animated shake"
+    >
       <p v-if="show">hello</p>
     </transition>
     <!-- transitionコンポーネントは単一の要素でしか入れられない -->
