@@ -20,12 +20,31 @@ export default {
 
 <style scoped>
 /* transitionクラス */
-.fade-enter {}
-.fade-enter-active {}
-.fade-enter-to {}
-.fade-leave {}
-.fade-leave-active {}
-.fade-leave-to {}
+
+/* 現れる時の最初の状態 */
+.fade-enter {
+  opacity: 0;
+}
+/* 現れる時のトランジションの状態 */
+.fade-enter-active {
+  transition: opacity 0.5s;
+}
+/* 現れる時の最後の状態 */
+.fade-enter-to {
+  opacity: 1;
+}
+/* 消える時の最初の状態 */
+.fade-leave {
+  opacity: 1;
+}
+/* 消える時のトランジションの状態 */
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+/* 消える時の最後の状態 */
+.fade-leave-to {
+  opacity: 0;
+}
 
 .main {
   width: 70%;
