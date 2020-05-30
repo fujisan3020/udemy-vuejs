@@ -1,5 +1,8 @@
 <template>
   <div class="main">
+    <button @click="myAnimation = 'slide'">Slide</button>
+    <button @click="myAnimation = 'fade'">Fade</button>
+    <p>{{ myAnimation }}</p>
     <button @click="show = !show">切り替え</button>
     <!-- transitionコンポーネント -->
     <transition
@@ -13,8 +16,7 @@
     <!-- CSSトランジションとCSSアニメーションを両方使用する時はtype属性をつける -->
     <!-- apper属性を使って、最初の描画時にトランジションを適用する -->
     <transition
-      name="slide"
-      type="animation"
+      :name="myAnimation"
       appear
     >
       <p v-show="show">bye</p>
@@ -27,6 +29,7 @@ export default {
   data() {
     return {
       show: true,
+      myAnimation: 'slide'
     };
   }
 }
