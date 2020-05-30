@@ -8,8 +8,8 @@
     <!-- transitionコンポーネントは単一の要素でしか入れられない -->
     <!-- 他の要素も入れたい場合は、divタグなどで括ってあげる -->
     <transition name="slide">
-      <div>
-        <p v-if="show">bye</p>
+      <div v-if="show">
+        <p>bye</p>
         <p>third</p>
         <p>third</p>
         <p>third</p>
