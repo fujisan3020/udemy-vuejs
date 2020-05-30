@@ -8,7 +8,12 @@
     <!-- transitionコンポーネントは単一の要素でしか入れられない -->
     <!-- 他の要素も入れたい場合は、divタグなどで括ってあげる -->
     <!-- CSSトランジションとCSSアニメーションを両方使用する時はtype属性をつける -->
-    <transition name="slide" type="animation">
+    <!-- apper属性を使って、最初の描画時にトランジションを適用する -->
+    <transition
+      name="slide"
+      type="animation"
+      appear
+    >
       <p v-show="show">bye</p>
     </transition>
   </div>
