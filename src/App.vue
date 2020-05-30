@@ -7,6 +7,7 @@
     </transition>
     <!-- transitionコンポーネントは単一の要素でしか入れられない -->
     <!-- 他の要素も入れたい場合は、divタグなどで括ってあげる -->
+    <!-- CSSトランジションとCSSアニメーションを両方使用する時はtype属性をつける -->
     <transition name="slide" type="animation">
       <p v-show="show">bye</p>
     </transition>
