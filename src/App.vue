@@ -7,13 +7,8 @@
     </transition>
     <!-- transitionコンポーネントは単一の要素でしか入れられない -->
     <!-- 他の要素も入れたい場合は、divタグなどで括ってあげる -->
-    <transition name="slide">
-      <div v-if="show">
-        <p>bye</p>
-        <p>third</p>
-        <p>third</p>
-        <p>third</p>
-      </div>
+    <transition name="slide" type="animation">
+      <p v-show="show">bye</p>
     </transition>
   </div>
 </template>
@@ -56,13 +51,18 @@ export default {
   opacity: 0;
 }
 
-
+.slide-enter,
+.slide-leave-to {
+  opacity: 0;
+}
 
 .slide-enter-active {
   animation: slide-in 0.5s;
+  transition: opacity 1s;
 }
 .slide-leave-active {
   animation: slide-in 0.5s reverse;
+  transition: opacity 1s;
 }
 
 @keyframes slide-in {
