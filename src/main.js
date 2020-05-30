@@ -2,13 +2,13 @@ import Vue from 'vue'
 
 // App.vueファイルをインポートすることによって、単一ファイルコンポーネントがオブジェクトになって使用できる？
 import App from './App.vue';
-import LikeNumber from "./components/LikeNumber.vue";
+// import LikeNumber from "./components/LikeNumber.vue";
 
 Vue.config.productionTip = false;
 // グローバル登録
 // main.jsでimportして来て、Vue.componentを宣言する
 
-Vue.component('LikeNumber', LikeNumber);
+// Vue.component('LikeNumber', LikeNumber);
 
 // filter : 一般的なテキストフォーマットを作成する
 // 第一引数はfilter名、第二引数は関数(今回は)を入れる。
