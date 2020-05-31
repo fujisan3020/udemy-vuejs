@@ -5,6 +5,12 @@
     <p>{{ myAnimation }}</p>
     <button @click="show = !show">切り替え</button>
     <!-- transitionコンポーネント -->
+    <transition name="fade">
+      <!-- トランジションの中で、複数の要素を切り替えるようなトランジションを使う場合、必ずキーをつける -->
+      <!-- v-showは2つ使えない -->
+      <p v-if="show" key="bye">さよなら</p>
+      <p v-else key="hello">こんにちは</p>
+    </transition>
     <transition
       enter-active-class="animated bounce"
       leave-active-class="animated shake"
