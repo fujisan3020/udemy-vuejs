@@ -69,14 +69,31 @@ export default {
     };
   },
   methods: {
-    beforeEnter() {},
-    enter() {},
-    afterEnter() {},
-    enterCancelled() {},
-    beforeLeave() {},
-    leave() {},
-    afterLeave() {},
-    leaveCancelled() {},
+    beforeEnter(el) {
+      // 現れる前
+    },
+    enter(el, done) {
+      // 現れる時
+    },
+    afterEnter(el) {
+      // 現れた後
+    },
+    enterCancelled(el) {
+      // 現れるアニメーションがキャンセルされれた時
+    },
+    beforeLeave(el) {
+      // 消える前
+    },
+    leave(el, done) {
+      // 消えた時
+    },
+    afterLeave(el) {
+      // 消えた後
+    },
+    leaveCancelled(el) {
+      // 消えるアニメーションがキャンセルされれた時
+      // v-showと一緒に使う時だけ、有効になる
+    }
   }
 }
 </script>
