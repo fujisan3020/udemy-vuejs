@@ -5,7 +5,8 @@
     <p>{{ myAnimation }}</p>
     <button @click="show = !show">切り替え</button>
     <!-- transitionコンポーネント -->
-    <transition name="fade">
+    <!-- mode="out-in" : 要素間のトランジションのタイミングをずらして、いい感じに表示してくれる -->
+    <transition name="fade" mode="out-in">
       <!-- トランジションの中で、複数の要素を切り替えるようなトランジションを使う場合、必ずキーをつける -->
       <!-- v-showは2つ使えない -->
       <p v-if="show" key="bye">さよなら</p>
