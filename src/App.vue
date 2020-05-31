@@ -6,7 +6,9 @@
     <button @click="show = !show">切り替え</button>
     <br><br>
     <!-- JavaScriptフック -->
-    <transition
+    <!-- css属性 : falseを渡すことによって、cssのアニメーションは適応させない ということを明示することができる。cssがトランジションに干渉するのを無効化させたり、cssの判定をスキップさせることで、パフォーマンスを向上させることができる。
+    <transition -->
+      :css="false"
       @before-enter="beforeEnter"
       @enter="enter"
       @after-enter="afterEnter"
