@@ -19,12 +19,19 @@
 
     <button @click="add">追加</button>
     <ul style="width: 200px; margin: auto;">
-      <transition-group>
+      <!-- トランジショングループとトランジションの違い
+      １、トランジショングループは複数の要素を取ることができる
+      ２、トランジショングループは必ずキーをつけなければならない
+      ３、トランジショングループは<span>になる(<div>などに変更可能)
+      ４、トランジショングループはトラジションモード(mode)が無い
+      ５、トランジショングループは6つ目のトランジションクラス(v-move)がある -->
+      <transition-group name="fade">
         <li
+        :key="number"
         style="cursor: pointer"
         v-for="(number, index) in numbers"
         @click="remove(index)"
-        >{{ number }}></li>
+        >{{ number }}</li>
       </transition-group>
     </ul>
 
