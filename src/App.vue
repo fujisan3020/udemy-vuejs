@@ -24,7 +24,7 @@
       ２、トランジショングループは必ずキーをつけなければならない
       ３、トランジショングループは<span>になる(<div>などに変更可能)
       ４、トランジショングループはトラジションモード(mode)が無い
-      ５、トランジショングループは6つ目のトランジションクラス(v-move)がある -->
+      ５、トランジショングループは7つ目のトランジションクラス(v-move)がある -->
       <transition-group name="fade">
         <li
         :key="number"
@@ -141,6 +141,10 @@ export default {
 
 /* transitionクラス */
 
+.fade-move {
+  transition: transform 1s;
+}
+
 /* 現れる時の最初の状態 */
 .fade-enter {
   opacity: 0;
@@ -160,11 +164,14 @@ export default {
 /* 消える時のトランジションの状態 */
 .fade-leave-active {
   transition: opacity 0.5s;
+  position: absolute;
+  width: 200px;
 }
 /* 消える時の最後の状態 */
 .fade-leave-to {
   opacity: 0;
 }
+
 
 .slide-enter,
 .slide-leave-to {
