@@ -11,8 +11,8 @@ export default new Router({
   // デフォルトは mode: "hash"
   mode: "history",
   routes: [
-    {path: '/', component: Home},
-    {path: '/users', component: Users}
+    {path: "/", component: Home},
+    {path: "/users/:id", component: Users}
   ]
 })
 
