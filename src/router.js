@@ -22,7 +22,7 @@ export default new Router({
         // 下の2つのパスは、/users/:id の続きである。
         // ex /users/:id/post  /users/:id/profile
         { path: "post", component: UsersPosts},
-        { path: "profile", component: UsersProfile}
+        { path: "profile", component: UsersProfile, name: "users-id-profile"}
       ]
     }
   ]
