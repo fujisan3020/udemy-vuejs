@@ -7,9 +7,15 @@ import Users from "./views/Users.vue";
 Vue.use(Router);
 
 export default new Router({
-  routes: [{path: '/', component: Home},
-           {path: '/users', component: Users}
+  // mode: "history"でURLの#を消すことができる
+  // デフォルトは mode: "hash"
+  mode: "history",
+  routes: [
+    {path: '/', component: Home},
+    {path: '/users', component: Users}
   ]
 })
 
 // URLの#以降はインターネットにアクセスされておらず、JavaScriptがlocalhpst(index.html)を読み込み、解析していろいろな処理がなされる。
+
+// デプロイ時はindex.htmlを返す処理はされないので、自分で全てのアクセスに対して、全てindex.htmlに対応付ける必要がある。
