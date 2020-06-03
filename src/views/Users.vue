@@ -7,11 +7,12 @@
     <hr>
     <h1>User No. {{ id }}</h1>
     <!-- to属性を動的に表現する -->
-    <router-link :to=" '/users/' + (Number(id) + 1) + '/profile' ">次のユーザー</router-link>
+    <router-link :to=" '/users/' + (Number(id) + 1) + '/profile?lang=ja' ">次のユーザー</router-link>
     <!-- 名前付きルートを使って、わかりやすくリンク先のURLを動的にする -->
     <router-link
       :to="{ name: 'users-id-profile',
-      params: { id: Number(id) + 1 } }"
+      params: { id: Number(id) + 1 } ,
+      query: { lang: 'ja', page: 2 } }"
     >次のユーザー</router-link>
     <!-- <router-view></router-view> -->
   </div>
