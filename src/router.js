@@ -11,3 +11,5 @@ export default new Router({
            {path: '/users', component: Users}
   ]
 })
+
+// URLの#以降はインターネットにアクセスされておらず、JavaScriptがlocalhpst(index.html)を読み込み、解析していろいろな処理がなされる。
