@@ -39,12 +39,27 @@ export default new Router({
         { path: "posts", component: UsersPosts},
         { path: "profile", component: UsersProfile, name: "users-id-profile"}
       ]
-    }, {
+    },
+    {
       // リダイレクト機能
       path: '*',
       redirect: '/'
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    // savedPosition : ページを戻った時、前回の飛んだ縦の位置(ｙ座標)に戻ることができる
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.hash) {
+      return {
+        selector: to.hash
+      };
+      // selector: '#next-user',
+      // offset: { x: 0, y: 100}
+      // return { x: 0, y: 100}
+    }
+  }
 });
 
 // URLの#以降はインターネットにアクセスされておらず、JavaScriptがlocalhpst(index.html)を読み込み、解析していろいろな処理がなされる。
