@@ -20,6 +20,10 @@ export default new Router({
       components: {
       default: Home,
       header: HeaderHome
+    },
+    // beforeEnterガード : 特定のページ遷移前に、特定の処理をする関数
+      beforeEnter(to, from, next) {
+      next(false);
       }
     },
     // ルートコンポーネントの再利用は、propsオプションをtrueにする
