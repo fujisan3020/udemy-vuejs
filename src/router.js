@@ -3,7 +3,7 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Users from "./views/Users.vue";
 import UsersPosts from "./views/UsersPosts.vue";
-import UsersProfile from "./views/Users.vue";
+import UsersProfile from "./views/UsersProfile.vue";
 import HeaderHome from "./views/HeaderHome.vue";
 import HeaderUsers from "./views/HeaderUsers.vue";
 
@@ -29,7 +29,10 @@ export default new Router({
         default: Users,
         header: HeaderUsers
       },
-      props: true,
+      props: {
+        default: true,
+        header: false
+      },
       children: [
         // 下の2つのパスは、/users/:id の続きである。
         // ex /users/:id/post  /users/:id/profile
