@@ -14,7 +14,7 @@
       params: { id: Number(id) + 1 } ,
       query: { lang: 'ja', page: 2 } }"
     >次のユーザー</router-link>
-    <!-- <router-view></router-view> -->
+    <router-view></router-view>
   </div>
 </template>
 

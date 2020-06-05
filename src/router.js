@@ -4,6 +4,8 @@ import Home from "./views/Home.vue";
 import Users from "./views/Users.vue";
 import UsersPosts from "./views/UsersPosts.vue";
 import UsersProfile from "./views/Users.vue";
+import HeaderHome from "./views/HeaderHome.vue";
+import HeaderUsers from "./views/HeaderUsers.vue";
 
 // .use : プラグインを適応する命令
 Vue.use(Router);
@@ -13,20 +15,30 @@ export default new Router({
   // デフォルトは mode: "hash"
   mode: "history",
   routes: [
-    {path: "/", component: Home},
+    {
+      path: "/",
+      components: {
+      default: Home,
+      header: HeaderHome
+      }
+    },
     // ルートコンポーネントの再利用は、propsオプションをtrueにする
-    {path: "/users/:id",
-      component: Users,
+    {
+      path: "/users/:id",
+      components: {
+        default: Users,
+        header: HeaderUsers
+      },
       props: true,
       children: [
         // 下の2つのパスは、/users/:id の続きである。
         // ex /users/:id/post  /users/:id/profile
-        { path: "post", component: UsersPosts},
+        { path: "posts", component: UsersPosts},
         { path: "profile", component: UsersProfile, name: "users-id-profile"}
       ]
     }
   ]
-})
+});
 
 // URLの#以降はインターネットにアクセスされておらず、JavaScriptがlocalhpst(index.html)を読み込み、解析していろいろな処理がなされる。
 
