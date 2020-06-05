@@ -1,11 +1,19 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
-import Users from "./views/Users.vue";
-import UsersPosts from "./views/UsersPosts.vue";
-import UsersProfile from "./views/UsersProfile.vue";
-import HeaderHome from "./views/HeaderHome.vue";
-import HeaderUsers from "./views/HeaderUsers.vue";
+// import Home from "./views/Home.vue";
+// import Users from "./views/Users.vue";
+// import UsersPosts from "./views/UsersPosts.vue";
+// import UsersProfile from "./views/UsersProfile.vue";
+// import HeaderHome from "./views/HeaderHome.vue";
+// import HeaderUsers from "./views/HeaderUsers.vue";
+
+// 遅延ローディングをすることで、必要な時にデータを取ってくる処理を書く
+const Home = ()  => import(/* webpackChunckName: "Home" */ "./views/Home.vue");
+const Users = ()  => import(/* webpackChunckName: "Users" */ "./views/Users.vue");
+const UsersPosts = ()  => import(/* webpackChunckName: "UsersPosts" */ "./views/UsersPosts.vue");
+const UsersProfile = ()  => import(/* webpackChunckName: "UsersProfile" */ "./views/UsersProfile.vue");
+const HeaderHome = ()  => import(/* webpackChunckName: "HeaderHome" */ "./views/HeaderHome.vue");
+const HeaderUsers = ()  => import(/* webpackChunckName: "HeaderUsers" */ "./views/HeaderUsers.vue");
 
 // .use : プラグインを適応する命令
 Vue.use(Router);
