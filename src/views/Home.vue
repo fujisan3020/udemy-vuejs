@@ -8,14 +8,14 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   computed: {
-    doubleCount() {
-      return this.$store.getters.doubleCount;
-    },
-    tripleCount() {
-      return this.$store.getters.tripleCount;
-    }
+    // mapGetters : gettersをまとめたもの
+    // ... (スプレッド演算子) : computedプロパティにオブジェクト{}はダメらしいので、... (スプレッド演算子)を使って、それをできるようにする。
+    ...mapGetters(["doubleCount", "tripleCount"]),
+
   },
   methods: {
     toUsers() {
