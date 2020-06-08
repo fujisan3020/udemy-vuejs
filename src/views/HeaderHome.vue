@@ -27,10 +27,11 @@
 export default {
   methods: {
     increment() {
-      this.$store.state.count++;
+      // $storeでmutationを使用するにはcommitを使う
+      this.$store.commit('increment', 2);
     },
     decrement() {
-      this.$store.state.count--;
+      this.$store.commit('decrement', 2);
     }
   }
 };
