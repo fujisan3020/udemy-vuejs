@@ -27,6 +27,7 @@
 export default {
   methods: {
     increment() {
+      
       // $storeでmutationを使用するにはcommitを使う
       this.$store.commit('increment', 2);
     },
