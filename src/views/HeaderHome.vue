@@ -24,10 +24,12 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
 import { mapMutations } from "vuex";
 
 export default {
   methods: {
+    ...mapActions(["increment", "decrement"]),
     ...mapMutations(["increment", "decrement"]),
     increment() {
       this.$store.dispatch('increment', 2);
